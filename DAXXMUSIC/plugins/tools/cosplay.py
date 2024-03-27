@@ -5,16 +5,16 @@ from pyrogram.enums import ChatAction
 from DAXXMUSIC import app
 from config import BOT_USERNAME
 
-NYKAA = [
+HEER = [
     [
-        InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ", url=f"https://t.me/nykaaxbot?startgroup=true"),
+        InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ", url=f"https://t.me/Heeer_music_bot?startgroup=true"),
     ],
 ]
 
 @app.on_message(filters.command("cosplay"))
 async def cosplay(_,msg):
     img = requests.get("https://waifu-api.vercel.app").json()
-    await msg.reply_photo(img, caption=f"❅ ᴄᴏsᴘʟᴀʏ ʙʏ ➠ ๛ɴ ʏ ᴋ ᴀ ᴀ ༗", reply_markup=InlineKeyboardMarkup(NYKAA),)
+    await msg.reply_photo(img, caption=f"❅ ᴄᴏsᴘʟᴀʏ ʙʏ ➠ ๛ʜ ᴇ ᴇ ʀ༗", reply_markup=InlineKeyboardMarkup(HEER),)
 
 
 
@@ -30,4 +30,4 @@ async def ncosplay(_,msg):
     else:
        ncosplay = requests.get("https://waifu-api.vercel.app/items/1").json()
 
-       await msg.reply_photo(ncosplay, caption=f"❅ ᴄᴏsᴘʟᴀʏ ʙʏ ➠ ๛ɴ ʏ ᴋ ᴀ ᴀ ࿐", reply_markup=InlineKeyboardMarkup(NYKAA),)
+       await msg.reply_photo(ncosplay, caption=f"❅ ᴄᴏsᴘʟᴀʏ ʙʏ ➠ ๛ʜ ᴇ ᴇ ʀ ࿐", reply_markup=InlineKeyboardMarkup(HEER),)
