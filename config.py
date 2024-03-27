@@ -12,13 +12,13 @@ API_HASH = getenv("API_HASH")
 # Get your token from @BotFather on Telegram.
 BOT_TOKEN = getenv("BOT_TOKEN")
 # Add Owner Username without @ 
-OWNER_USERNAME = getenv("OWNER_USERNAME", "roy_editx")
+OWNER_USERNAME = getenv("OWNER_USERNAME", "its_deep_ydv")
 # Get Your bot username
-BOT_USERNAME = getenv("BOT_USERNAME", "NykaaxBot")
+BOT_USERNAME = getenv("BOT_USERNAME", "Heeer_music_bot")
 # Don't Add style font 
-BOT_NAME = getenv("BOT_NAME", "NYKAA MUSIC")
+BOT_NAME = getenv("BOT_NAME", "HEER MUSIC")
 #get Your Assistant User name
-ASSUSERNAME = getenv("ASSUSERNAME", "NYKAA_ASS")
+ASSUSERNAME = getenv("ASSUSERNAME", "HEEERMUSIC")
 EVALOP = list(map(int, getenv("EVALOP", "6195725562").split()))
 # Get your mongo url from cloud.mongodb.com
 MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://sanasomani786:TJgADfpkI1XVUkKt@cluster0.ruhyad9.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp")
@@ -51,8 +51,8 @@ GIT_TOKEN = getenv(
     "GIT_TOKEN", None
 )  # Fill this variable if your upstream repository is private
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/roy_editx")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/the_friendz")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/FONT_CHANNEL_01")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/exampurrs")
 
 # Set this to True if you want the assistant to automatically leave chats after an interval
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
@@ -95,10 +95,10 @@ confirmer = {}
 
 
 START_IMG_URL = getenv(
-    "START_IMG_URL", "https://telegra.ph/file/982b01ba53c3d69b0d0ce.jpg"
+    "START_IMG_URL", "https://telegra.ph/file/9e2e83ad4bcd814a538c5.jpg"
 )
 PING_IMG_URL = getenv(
-    "PING_IMG_URL", "https://telegra.ph/file/dec61e858d57c14343455.jpg"
+    "PING_IMG_URL", "https://telegra.ph/file/c8183c9f6573f7eb799d2.jpg"
 )
 PLAYLIST_IMG_URL = "https://telegra.ph/file/7795e58425337d0455e95.jpg"
 STATS_IMG_URL = "https://graph.org/file/136c57e473c33a0c62152.jpg"
