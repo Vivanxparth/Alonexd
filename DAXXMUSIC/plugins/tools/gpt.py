@@ -6,8 +6,8 @@ from pyrogram import filters
 from MukeshAPI import api
 from config import BOT_NAME, BOT_USERNAME
 
-@Mukesh.on_message(filters.command(["chatgpt","ai","ask"],  prefixes=["+", ".", "/", "-", "?", "$","#","&"]))
-async def chat_gpt(bot, message):
+@Mukesh.on_message(filters.command(["lol"],  prefixes=["+", ".", "/", "-", "?", "$","#","&"]))
+async def chat_gpt(app, message):
     
     try:
         await bot.send_chat_action(message.chat.id, ChatAction.TYPING)
