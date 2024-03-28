@@ -52,4 +52,3 @@ async_pymongo
 cloudscraper
 pycryptodome
 opencv-python
-MukeshAPI
