@@ -19,7 +19,7 @@ async def chat_gpt(bot, message):
             )
         else:
             a = message.text.split(' ', 1)[1]
-            response = requests.get(f'https://chatgpt.apinepdev.workers.dev/?question={a}')
+            response = requests.get(f'https://api.openai.com/v1/engines/davinci-codex/completions')
 
             try:
                 # Check if "results" key is present in the JSON response
