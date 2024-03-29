@@ -53,5 +53,3 @@ async_pymongo
 cloudscraper
 pycryptodome
 opencv-python
-transformers
-PyTorch
