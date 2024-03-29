@@ -1,25 +1,38 @@
-from OpsAi import Ai
-from asyncio import sleep as rest 
-from datetime import datetime 
+from pyrogram import Client, filters
+import transformers
 from DAXXMUSIC import app
-from pyrogram import filters
+
+# Load pre-trained GPT-2 model
+model_name = "gpt2"
+tokenizer = transformers.GPT2Tokenizer.from_pretrained(model_name)
+model = transformers.GPT2LMHeadModel.from_pretrained(model_name)
+
+# Handler to process messages
+@app.on_message(filters.command(["start", "help"]))
+def start_command(client, message):
+    reply = "Hello! I am an AI chatbot. You can start chatting with me by sending a message."
+    client.send_message(message.chat.id, reply)
 
 
-@app.on_message(filters.command("ask"))
-async def ai_bot(_, message):
-     if message.reply_to_message:
-      queri = message.reply_to_message.text
-      gonb = Ai(query=queri)
-      await message.reply(gonb.chat())
-     elif len(message.command) == 1:
-      return await message.reply("ʜᴇʟʟᴏ 🥀\nɪ'ᴍ ᴀ ᴀɪ ᴀssɪsᴛᴀɴᴛ Fᴏʀ Aɴsᴡᴇʀ Yᴏᴜʀ Aɴʏ ǫᴜᴇsᴛɪᴏɴs, ʜᴏᴡ ᴄᴀɴ ɪ ʜᴇʟᴘ ʏᴏᴜ \n\nᴊᴏɪɴ [Oᴜʀ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ](https://t.me/BikashGadgetsTech)")
-     elif len(message.command) > 1:
-      queri = message.text.split(None,1)[1]
-     gonb = Ai(query=queri)
-     x = Ai(query=queri)
-     me = await message.reply_text("ᴘʀᴏᴄᴇssᴇs.....")
-     await rest(2)
-     mee = await me.edit_text("ᴀʟʟ ᴍᴏsᴛ ᴅᴏɴᴇ ....")
-     await mee.delete()
-     await rest(1)
-     await message.reply(gonb.chat())
+@app.on_message(~filters.command(["start", "help"]))
+def handle_message(client, message):
+    chat_id = message.chat.id
+    text = message.text
+
+    # Tokenize input
+    inputs = tokenizer.encode(text, return_tensors="pt")
+
+    # Generate response
+    outputs = model.generate(inputs, max_length=50, num_return_sequences=1)
+    reply = tokenizer.decode(outputs[0], skip_special_tokens=True)
+
+    client.send_message(chat_id, reply)
+
+
+# Main function to run the bot
+def main():
+    app.run()
+
+
+if __name__ == '__main__':
+    main()
