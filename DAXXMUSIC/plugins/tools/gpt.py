@@ -2,6 +2,7 @@ import time
 import openai
 import random
 import requests
+from DAXXMUSIC import app
 from pyrogram import Client, filters
 from pyrogram.enums import ChatAction, ParseMode
 
