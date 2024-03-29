@@ -11,7 +11,7 @@ openai.api_key = "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"
 
 # Handler to process messages
 @app.on_message(filters.command("ask"))
-def chat_bot(bot, message):
+async def chat_bot(bot, message):
     try:
         start_time = time.time()
         await bot.send_chat_action(message.chat.id, ChatAction.TYPING)
