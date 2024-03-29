@@ -1,3 +1,4 @@
+import torch
 from pyrogram import Client, filters
 import transformers
 from DAXXMUSIC import app
